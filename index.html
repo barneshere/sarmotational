@@ -12,6 +12,9 @@ body{margin:0;background:#16130F}
 a{color:#16130F}a:hover{color:#7A231C}
 .plaid{background-color:#6E1F19;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.38) 0 22px,transparent 22px 44px,rgba(214,166,43,.22) 44px 48px,transparent 48px 88px),repeating-linear-gradient(90deg,rgba(0,0,0,.38) 0 22px,transparent 22px 44px,rgba(214,166,43,.22) 44px 48px,transparent 48px 88px)}
 .olive-plaid{background-color:#3E4625;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.32) 0 16px,transparent 16px 32px,rgba(233,226,208,.10) 32px 34px,transparent 34px 64px),repeating-linear-gradient(90deg,rgba(0,0,0,.32) 0 16px,transparent 16px 32px,rgba(233,226,208,.10) 32px 34px,transparent 34px 64px)}
+.trk{transform:rotate(var(--r));transition:transform .2s ease}
+.trk:hover{transform:rotate(0) translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.trk{transition:none}.trk:hover{transform:rotate(var(--r))}}
 .torn{clip-path:polygon(0 3%,6% 0,14% 2%,22% 0,31% 3%,40% 1%,52% 3%,61% 0,72% 2%,83% 0,92% 3%,100% 1%,100% 97%,93% 100%,84% 97%,73% 100%,62% 98%,50% 100%,39% 97%,28% 100%,17% 98%,8% 100%,0 98%)}
 </style>
 </head>
@@ -96,28 +99,63 @@ a{color:#16130F}a:hover{color:#7A231C}
 </section>
 
 <section id="format" class="olive-plaid" style="padding: 88px 24px">
-<div style="max-width: 1100px; margin: 0 auto; background: #16130F; color: #E9E2D0; border: 4px solid #E9E2D0; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 48px; box-shadow: 12px 12px 0 rgba(0,0,0,0.5)">
-<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #D6A62B">The Format</p>
+<div style="max-width: 1100px; margin: 0 auto; background: #16130F; color: #E9E2D0; border: 4px solid #E9E2D0; padding: clamp(28px, 5vw, 56px); box-shadow: 12px 12px 0 rgba(0,0,0,0.5)">
+<div style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: 52px">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 560px">
+<p style="margin: 0; font-family: 'Special Elite', monospace; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: #D6A62B">On The Cart</p>
 <h2 style="margin: 0; font-family: 'Rubik Distressed', Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 64px); line-height: 1">THE SETLIST</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D8D1BE">[Describe the format — scramble, best ball, stroke play, teams drawn from a hat, whatever the committee decides this year.]</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D8D1BE">Four tracks, 36 holes, no skips. This is what's riding in the cooler all day.</p>
 </div>
-<ol style="flex: 1 1 360px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
-<li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 2px dashed rgba(233,226,208,0.35)">
-<span style="font-family: 'Special Elite', monospace; font-size: 18px; color: #D6A62B; min-width: 72px">TRK 01</span>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Permanent Marker', cursive; font-size: 22px">[Main event]</span><span style="font-size: 16px; color: #D8D1BE">[How the champion is decided]</span></div>
+<span style="font-family: 'Special Elite', monospace; font-size: 17px; background: #D6A62B; color: #16130F; padding: 8px 14px; transform: rotate(2deg)">4 tracks · 2 sides</span>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 40px 32px">
+<li class="trk" style="--r: -2deg; position: relative; background: #FBF8EE; color: #16130F; border: 3px solid #E9E2D0; box-shadow: 8px 8px 0 #D6A62B; display: flex; flex-direction: column">
+<span style="position: absolute; top: -18px; left: -14px; z-index: 1; background: #6E1F19; color: #E9E2D0; border: 3px solid #E9E2D0; font-family: 'Special Elite', monospace; font-size: 15px; padding: 6px 10px; transform: rotate(-6deg)">TRK 01</span>
+<div style="background: #FFFFFF; border-bottom: 3px solid #16130F; padding: 14px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center">
+<img src="img/setlist/oldfashioned.jpg" alt="On The Rocks Old Fashioned bottle made with Knob Creek bourbon" width="600" height="600" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block">
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-family: 'Permanent Marker', cursive; font-size: 24px; line-height: 1.1">Old Fashioned</span>
+<span style="font-family: 'Special Elite', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #6E1F19">On The Rocks · Knob Creek Bourbon</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A342A">Knob Creek bourbon, bitters, cane sugar, orange and cherry. Pour it over one big cube.</span>
+<span style="margin-top: auto; padding-top: 12px; border-top: 2px dashed #8A8370; display: flex; justify-content: space-between; font-family: 'Special Elite', monospace; font-size: 15px"><span>Side A</span><span>35% ABV</span></span>
+</div>
 </li>
-<li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 2px dashed rgba(233,226,208,0.35)">
-<span style="font-family: 'Special Elite', monospace; font-size: 18px; color: #D6A62B; min-width: 72px">TRK 02</span>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Permanent Marker', cursive; font-size: 22px">[Side game]</span><span style="font-size: 16px; color: #D8D1BE">[Which hole, what it pays]</span></div>
+<li class="trk" style="--r: 1.5deg; position: relative; background: #FBF8EE; color: #16130F; border: 3px solid #E9E2D0; box-shadow: 8px 8px 0 #D6A62B; display: flex; flex-direction: column">
+<span style="position: absolute; top: -18px; left: -14px; z-index: 1; background: #6E1F19; color: #E9E2D0; border: 3px solid #E9E2D0; font-family: 'Special Elite', monospace; font-size: 15px; padding: 6px 10px; transform: rotate(-6deg)">TRK 02</span>
+<div style="background: #FFFFFF; border-bottom: 3px solid #16130F; padding: 14px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center">
+<img src="img/setlist/twistedtea.jpg" alt="Twisted Tea Original 12-pack of cans" width="600" height="600" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block">
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-family: 'Permanent Marker', cursive; font-size: 24px; line-height: 1.1">Twisted Tea</span>
+<span style="font-family: 'Special Elite', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #6E1F19">Original Hard Iced Tea</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A342A">Real brewed black tea with a twist of lemon. The fairway's official hydration.</span>
+<span style="margin-top: auto; padding-top: 12px; border-top: 2px dashed #8A8370; display: flex; justify-content: space-between; font-family: 'Special Elite', monospace; font-size: 15px"><span>Side A</span><span>5% ABV</span></span>
+</div>
 </li>
-<li style="display: flex; gap: 20px; padding: 18px 0; border-bottom: 2px dashed rgba(233,226,208,0.35)">
-<span style="font-family: 'Special Elite', monospace; font-size: 18px; color: #D6A62B; min-width: 72px">TRK 03</span>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Permanent Marker', cursive; font-size: 22px">[Side game]</span><span style="font-size: 16px; color: #D8D1BE">[Which hole, what it pays]</span></div>
+<li class="trk" style="--r: -1deg; position: relative; background: #FBF8EE; color: #16130F; border: 3px solid #E9E2D0; box-shadow: 8px 8px 0 #D6A62B; display: flex; flex-direction: column">
+<span style="position: absolute; top: -18px; left: -14px; z-index: 1; background: #6E1F19; color: #E9E2D0; border: 3px solid #E9E2D0; font-family: 'Special Elite', monospace; font-size: 15px; padding: 6px 10px; transform: rotate(-6deg)">TRK 03</span>
+<div style="background: #FFFFFF; border-bottom: 3px solid #16130F; padding: 14px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center">
+<img src="img/setlist/goodboy.jpg" alt="Good Boy Vodka cocktail seltzer variety 8-pack" width="600" height="600" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block">
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-family: 'Permanent Marker', cursive; font-size: 24px; line-height: 1.1">Good Boy Seltzers</span>
+<span style="font-family: 'Special Elite', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #6E1F19">Good Boy Vodka Cocktails</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A342A">Vodka and real fruit juice: watermelon, peach mango, cran-pineapple, strawberry hibiscus.</span>
+<span style="margin-top: auto; padding-top: 12px; border-top: 2px dashed #8A8370; display: flex; justify-content: space-between; font-family: 'Special Elite', monospace; font-size: 15px"><span>Side B</span><span>4.5% ABV</span></span>
+</div>
 </li>
-<li style="display: flex; gap: 20px; padding: 18px 0">
-<span style="font-family: 'Special Elite', monospace; font-size: 18px; color: #D6A62B; min-width: 72px">TRK 04</span>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Permanent Marker', cursive; font-size: 22px">[House rule]</span><span style="font-size: 16px; color: #D8D1BE">[Mulligans, gimmes, penalties for showing up late]</span></div>
+<li class="trk" style="--r: 2deg; position: relative; background: #FBF8EE; color: #16130F; border: 3px solid #E9E2D0; box-shadow: 8px 8px 0 #D6A62B; display: flex; flex-direction: column">
+<span style="position: absolute; top: -18px; left: -14px; z-index: 1; background: #6E1F19; color: #E9E2D0; border: 3px solid #E9E2D0; font-family: 'Special Elite', monospace; font-size: 15px; padding: 6px 10px; transform: rotate(-6deg)">TRK 04</span>
+<div style="background: #FFFFFF; border-bottom: 3px solid #16130F; padding: 14px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center">
+<img src="img/setlist/margarita.jpg" alt="On The Rocks Margarita bottle made with Hornitos tequila" width="600" height="600" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block">
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-family: 'Permanent Marker', cursive; font-size: 24px; line-height: 1.1">Margarita</span>
+<span style="font-family: 'Special Elite', monospace; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #6E1F19">On The Rocks · Hornitos Tequila</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A342A">Hornitos Plata, lime and triple sec. Ice, salted rim, lime wedge, done.</span>
+<span style="margin-top: auto; padding-top: 12px; border-top: 2px dashed #8A8370; display: flex; justify-content: space-between; font-family: 'Special Elite', monospace; font-size: 15px"><span>Side B</span><span>20% ABV</span></span>
+</div>
 </li>
 </ol>
 </div>
